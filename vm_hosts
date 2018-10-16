@@ -25,8 +25,7 @@ hpe-dtr03 ip_addr='10.10.174.236/22' esxi_host='simply03.am2.cloudra.local'
 cpus='2'
 ram='16384'
 disk2_size='500'
-# make sure swarm is specified for DTR otherwise DTR machines will be configured in mixed mode and the deployment  "may" fail in some
-cases
+# make sure swarm is specified for DTR otherwise DTR machines will be configured in mixed mode and the deployment  "may" fail in some cases
 orchestrator=swarm
 
 ## WORKER
