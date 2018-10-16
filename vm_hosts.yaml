@@ -1,0 +1,137 @@
+all:
+  children:
+    all_vms:
+      children:
+        vms: {}
+        win_worker: {}
+    docker:
+      children:
+        dtr: {}
+        ucp: {}
+        worker: {}
+    dtr:
+      hosts:
+        hpe-dtr01:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.234/22
+        hpe-dtr02:
+          esxi_host: simply02.am2.cloudra.local
+          ip_addr: 10.10.174.235/22
+        hpe-dtr03:
+          esxi_host: simply03.am2.cloudra.local
+          ip_addr: 10.10.174.236/22
+      vars:
+        cpus: '2'
+        disk2_size: '500'
+        orchestrator: swarm
+        ram: '16384'
+    dtr_lb:
+      hosts:
+        hpe-dtr:
+          esxi_host: simply02.am2.cloudra.local
+          ip_addr: 10.10.174.238/22
+    dtr_main:
+      hosts:
+        hpe-dtr01:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.234/22
+    lbs:
+      hosts:
+        hpe-dtr:
+          esxi_host: simply02.am2.cloudra.local
+          ip_addr: 10.10.174.238/22
+        hpe-ucp:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.237/22
+        hpe-worker:
+          esxi_host: simply03.am2.cloudra.local
+          ip_addr: 10.10.174.239/22
+      vars:
+        cpus: '2'
+        ram: '4096'
+    local:
+      hosts:
+        localhost:
+          ansible_connection: local
+    logger:
+      hosts:
+        hpe-logger:
+          esxi_host: simply02.am2.cloudra.local
+          ip_addr: 10.10.174.244/22
+      vars:
+        cpus: '2'
+        ram: '4096'
+    nfs:
+      hosts:
+        hpe-nfs:
+          esxi_host: simply03.am2.cloudra.local
+          ip_addr: 10.10.174.240/22
+      vars:
+        cpus: '2'
+        disk2_size: '500'
+        ram: '4096'
+    ucp:
+      hosts:
+        hpe-ucp01:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.231/22
+        hpe-ucp02:
+          esxi_host: simply02.am2.cloudra.local
+          ip_addr: 10.10.174.232/22
+        hpe-ucp03:
+          esxi_host: simply03.am2.cloudra.local
+          ip_addr: 10.10.174.233/22
+      vars:
+        cpus: '4'
+        disk2_size: '500'
+        ram: '16384'
+    ucp_lb:
+      hosts:
+        hpe-ucp:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.237/22
+    ucp_main:
+      hosts:
+        hpe-ucp01:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.231/22
+    vms:
+      children:
+        dtr: {}
+        lbs: {}
+        logger: {}
+        nfs: {}
+        ucp: {}
+        worker: {}
+      vars:
+        disk1_size: '100'
+    win_worker:
+      vars:
+        cpus: '4'
+        disk1_size: '100'
+        disk2_size: '500'
+        orchestrator: swarm
+        ram: '65536'
+    worker:
+      hosts:
+        hpe-worker01:
+          esxi_host: simply01.am2.cloudra.local
+          ip_addr: 10.10.174.241/22
+        hpe-worker02:
+          esxi_host: simply02.am2.cloudra.local
+          ip_addr: 10.10.174.242/22
+        hpe-worker03:
+          esxi_host: simply03.am2.cloudra.local
+          ip_addr: 10.10.174.243/22
+          orchestrator: swarm
+      vars:
+        cpus: '4'
+        disk2_size: '500'
+        orchestrator: kubernetes
+        ram: '65536'
+    worker_lb:
+      hosts:
+        hpe-worker:
+          esxi_host: simply03.am2.cloudra.local
+          ip_addr: 10.10.174.239/22
+
