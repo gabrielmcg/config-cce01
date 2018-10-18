@@ -4,8 +4,8 @@ hpe-ucp01 ip_addr='10.10.174.231/22' esxi_host='simply01.am2.cloudra.local'
 
 [ucp]
 hpe-ucp01 ip_addr='10.10.174.231/22' esxi_host='simply01.am2.cloudra.local'
-hpe-ucp02 ip_addr='10.10.174.232/22' esxi_host='simply02.am2.cloudra.local'
-hpe-ucp03 ip_addr='10.10.174.233/22' esxi_host='simply03.am2.cloudra.local'
+#hpe-ucp02 ip_addr='10.10.174.232/22' esxi_host='simply02.am2.cloudra.local'
+#hpe-ucp03 ip_addr='10.10.174.233/22' esxi_host='simply03.am2.cloudra.local'
 
 [ucp:vars]
 cpus='4'
