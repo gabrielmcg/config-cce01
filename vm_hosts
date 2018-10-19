@@ -112,3 +112,8 @@ win_worker
 # Local
 [local]
 localhost ansible_connection=local
+
+
+[all_vms_local:children]
+all_vms
+local
