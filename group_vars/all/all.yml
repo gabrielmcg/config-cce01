@@ -136,7 +136,8 @@ env:
 
 monitoring_stack: splunk_demo
 
-splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.1.2'
+splunk_architecture_universal_forwarder_package_location: '/tmp'
+splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.1.2.rpm'
 
 #
 #monitoring_stack: splunk
