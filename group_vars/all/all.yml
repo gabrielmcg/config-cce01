@@ -75,7 +75,7 @@ ucp_username: 'admin'
 #
 # cidr to use for pod IP adresses
 #
-#k8s_pod_cidr: 192.168.192.0/18
+k8s_pod_cidr: 192.168.192.0/18
 
 #
 # certs dir
