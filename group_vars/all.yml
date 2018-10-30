@@ -164,14 +164,12 @@ sysdig_tags: 'location:EnterCity,role:Enterprise CaaS on Synergy,owner:Customer 
 sysdig_restricted_control_role: 'Restricted Control'
 k8s_cluster: 'ucp_hpe-ucp.cloudra.local'
 
-#k8s nfs provisionner role name
-nfs_provisioner_role: 'nfs-provisioner-runner'
-nfs_provisioner_name: "hpe.com/nfs"
-nfs_provisioner_storage_class_name: "nfs"
-#nfs_provisioner_server_ip: vfs3par.cloudra.local
-#nfs_provisioner_server_share: '/vfs3par/vfs3par/fs_clh/share'
-nfs_provisioner_server_ip: clh-nfs.cloudra.local
-nfs_provisioner_server_share: '/k8s'
+#k8s nfs provisioner
+nfs_provisioner_role:	'nfsvm-provisioner-runner'
+nfs_provisioner_name:	'hpe.com/nfsvm'
+nfs_provisioner_storage_class_name:	'nfsvm'
+nfs_provisioner_server_ip:	'hpe-nfs.am2.cloudra.local'
+nfs_provisioner_server_share:	'/k8s'
 
 
 
